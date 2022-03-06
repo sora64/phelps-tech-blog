@@ -8,18 +8,8 @@ router.get('/', (req, res) => {
   console.log('======================');
   Post.findAll({
     order: [['created_at', 'DESC']],
-    attributes: [
-      'id',
-      'post_content',
-      'title',
-      'created_at',
-      [
-        sequelize.literal(
-          '(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'
-        ),
-        'vote_count',
-      ],
-    ],
+    attributes: ['id', 'title', 'created_at', 'post_content'],
+    order: [['created_at', 'DESC']],
     include: [
       {
         model: Comment,
@@ -31,7 +21,7 @@ router.get('/', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username'],
+        attributes: ['username', 'github'],
       },
     ],
   })
@@ -47,19 +37,12 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: [
-      'id',
-      'post_content',
-      'title',
-      'created_at',
-      [
-        sequelize.literal(
-          '(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'
-        ),
-        'vote_count',
-      ],
-    ],
+    attributes: ['id', 'title', 'created_at', 'post_content'],
     include: [
+      {
+        model: User,
+        attributes: ['username', 'github'],
+      },
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -67,10 +50,6 @@ router.get('/:id', (req, res) => {
           model: User,
           attributes: ['username'],
         },
-      },
-      {
-        model: User,
-        attributes: ['username'],
       },
     ],
   })
@@ -93,29 +72,19 @@ router.post('/', withAuth, (req, res) => {
     title: req.body.title,
     post_content: req.body.post_content,
     user_id: req.session.user_id,
-  });
-});
-
-router.put('/upvote', withAuth, (req, res) => {
-  // make sure the session exists first
-  if (req.session) {
-    // pass session id along with all destructured properties on req.body
-    Post.upvote(
-      { ...req.body, user_id: req.session.user_id },
-      { Vote, Comment, User }
-    )
-      .then((updatedVoteData) => res.json(updatedVoteData))
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  }
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title,
+      post_content: req.body.post_content
     },
     {
       where: {

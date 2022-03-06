@@ -8,15 +8,9 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'post_url',
       'title',
       'created_at',
-      [
-        sequelize.literal(
-          '(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'
-        ),
-        'vote_count',
-      ],
+      'post_content'
     ],
     include: [
       {
@@ -29,7 +23,7 @@ router.get('/', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username'],
+        attributes: ['username', 'github'],
       },
     ],
   })
@@ -73,15 +67,9 @@ router.get('/post/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
       'title',
       'created_at',
-      [
-        sequelize.literal(
-          '(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'
-        ),
-        'vote_count',
-      ],
+      'post_content'
     ],
     include: [
       {
@@ -94,7 +82,7 @@ router.get('/post/:id', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username'],
+        attributes: ['username', 'github'],
       },
     ],
   })
