@@ -1,24 +1,25 @@
+<!DOCTYPE html>
 <html lang='en'>
 
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Just Tech News</title>
+    <title>phelps tech blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
 
   <body>
     <div class='wrapper'>
       <header>
-        <h1>
-          <a href='/'>Just Tech News</a>
-        </h1>
-        <nav>
+        <h1 class="has-text-black px-3 py-3 has-text-weight-bold">phelps tech blog</h1>
+        <nav class="navbar mt-2">
+          <a href='/' class="navbar-item is-hoverable pt-1">home</a>
           {{#if loggedIn}}
-            <a href='/dashboard'>dashboard</a>
-            <button id='logout' class='btn-no-style'>logout</button>
+            <a href='/dashboard' class="navbar-item is-hoverable pt-1">dashboard</a>
+            <button id='logout' class='button is-danger'>logout</button>
           {{else}}
-            <a href='/login'>login</a>
+            <a href='/login' class="navbar-item is-hoverable pt-1">login</a>
           {{/if}}
         </nav>
       </header>
@@ -26,7 +27,7 @@
         {{{body}}}
       </main>
       <footer>
-        Thanks for visiting!
+        Thank you for stopping by!
       </footer>
     </div>
     {{#if loggedIn}}

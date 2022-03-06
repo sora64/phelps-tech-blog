@@ -40,6 +40,11 @@ User.init(
         isEmail: true,
       },
     },
+    // define a github column
+    github: {
+      type: DataTypes.STRING,
+      allowNull: true
+  },
     // define a password column
     password: {
       type: DataTypes.STRING,

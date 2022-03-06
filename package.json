@@ -1,5 +1,5 @@
 {
-  "name": "just-tech-news",
+  "name": "phelps-tech-blog",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sora64/just-tech-news.git"
+    "url": "git+https://github.com/sora64/phelps-tech-blog.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sora64/just-tech-news/issues"
+    "url": "https://github.com/sora64/phelps-tech-blog/issues"
   },
-  "homepage": "https://github.com/sora64/just-tech-news#readme",
+  "homepage": "https://github.com/sora64/phelps-tech-blog#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
