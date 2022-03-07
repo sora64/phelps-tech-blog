@@ -14,7 +14,7 @@ This is a CMS-style blog site where users can publish articles, blog posts, and 
 
 ## Installation
 
-Make sure to intsall the appropriate packages by running "npm i" in the terminal. Also, update the .env file to include your MySQL shell login information. Alternatively, you could go to the deployed applications URL.
+Make sure to intsall the appropriate packages by running "npm i" in the terminal. Also, update the .env file to include your MySQL shell login information. Alternatively, you could go to the deployed application's URL.
 
 ## Usage
 
