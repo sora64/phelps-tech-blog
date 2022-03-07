@@ -25,7 +25,7 @@ This application is a simple blog, used to express thoughts and opinions.
 
 ## Link
 
-[https://phelps-tech-blog.herokuapp.com/dashboard](https://phelps-tech-blog.herokuapp.com/dashboard)
+[https://phelps-tech-blog.herokuapp.com/](https://phelps-tech-blog.herokuapp.com/)
 
 ## Screenshot
 
