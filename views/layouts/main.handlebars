@@ -11,27 +11,28 @@
 
   <body>
     <div class='wrapper'>
-      <header class="has-background-success">
-        <h1 class="has-text-black px-3 py-3 has-text-weight-bold">phelps tech blog</h1>
-        <nav class="navbar mt-2">
-          <button class="button is-warning is-hoverable navbar-item pt-1"><a href='/' class="has-text-white has-text-weight-bold">home</a></button>
-          {{#if loggedIn}}
-            <button class="button is-primary is-hoverable has-text-weight-bold navbar-item pt-1"><a href='/dashboard' class="has-text-white">dashboard</a></button>
-            <button id='logout' class='button is-danger is-hoverable has-text-weight-bold navbar-item pt-1'>logout</button>
-          {{else}}
-            <button class="button is-info is-hoverable has-text-weight-bold navbar-item pt-1"><a href='/login' class="has-text-white">login</a></button>
-          {{/if}}
+      <header class="has-background-primary">
+        <h1 class="has-text-black px-3 py-3 has-text-weight-bold is-size-3">phelps tech blog</h1>
+        <nav class="navbar mt-2 has-background-grey-lighter is-right">
+          <div class="navbar-brand">
+            <a href='/' class="mt-3 mx-4 is-hoverable navbar-item pt-1 has-text-weight-medium is-size-5">home</a>
+            <a href='/dashboard' class="mt-3 mx-4 has-text-weight-medium navbar-item pt-1 is-size-5">dashboard</a>
+            {{#if loggedIn}}
+              <button id='logout' class='button mt-3 mx-4 is-danger is-hoverable has-text-weight-medium navbar-item pt-1 is-size-5'>logout</button>
+            {{else}}
+              <button class="button mt-3 mx-4 is-info is-hoverable has-text-weight-medium navbar-item pt-1 is-size-5"><a href='/login' class="has-text-white">login</a></button>
+            {{/if}}
+          </div>
         </nav>
       </header>
-      <main>
+      <main class="has-background-white-ter">
         {{{body}}}
       </main>
-      <footer>
-        <p>
-          <span class="has-text-weight-bold">phelps-tech-blog</span> by <a href="https://github.com/priyaravi23">Alan Phelps</a> | made with <a href="https://bulma.io/">bulma</a> | code:
-          <a href="https://github.com/sora64/phelps-tech-blog">github.com/sora64/phelps-tech-blog</a> |  
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <span class="has-text-weight-bold">phelps-tech-blog</span> by <a href="https://github.com/sora64">Alan Phelps</a> | made with <a href="https://bulma.io/">bulma</a> |  
           <a href="mailto:phelpsa64@gmail.com">Contact Me</a>
-        </p>
+        </div>
       </footer>
     </div>
     {{#if loggedIn}}

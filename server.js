@@ -14,6 +14,8 @@ const sess = {
   cookie: {},
   resave: false,
   saveUninitialized: true,
+  // App will log user out after a minute of inactivity
+  cookie:{maxAge: 60000},
   store: new SequelizeStore({
     db: sequelize,
   }),
