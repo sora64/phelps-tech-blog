@@ -15,7 +15,7 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   // App will log user out after a minute of inactivity
-  cookie:{maxAge: 60000},
+  cookie: { maxAge: 60000 },
   store: new SequelizeStore({
     db: sequelize,
   }),
@@ -36,5 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/'));
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  const server = app.listen(process.env.PORT || 5000, () => {
+    const port = server.address().port;
+    console.log(`Now listening on port ${port}`);
+  });
 });
