@@ -1,7 +1,5 @@
 # phelps-tech-blog
 
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-
 ## Description
 
 This is a CMS-style blog site where users can publish articles, blog posts, and their thoughts and opinions.
@@ -13,7 +11,6 @@ This is a CMS-style blog site where users can publish articles, blog posts, and 
 - [Link](#link)
 - [Screenshot](#screenshot)
 - [Questions](#questions)
-- [License](#license)
 
 ## Installation
 
@@ -36,7 +33,3 @@ This application is a simple blog, used to express thoughts and opinions.
 - GitHub: [sora64](https://github.com/sora64/)
 
 - Email: If you have any other questions, please reach me at [phelpsa64@gmail.com](mailto:phelpsa64@gmail.com).
-
-## License
-
-This application is covered under the [ISC](https://opensource.org/licenses/ISC) license.
