@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/sora64/phelps-tech-blog.git"
   },
-  "keywords": [],
+  "keywords": ["heroku"],
   "author": "",
   "license": "ISC",
   "bugs": {
